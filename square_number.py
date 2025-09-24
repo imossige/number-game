@@ -1,8 +1,14 @@
 # the number
-x = 2
+original_number = 2
 
 # square a number
-square = x**2 
+def squared_number(number):
+    # return the squared number
+    return number**2 
 
-# print the squared number
-print("The square of", x, "is", square )
+
+def main():
+    print(squared_number(original_number))
+
+if __name__ == "__main__":
+    main()
