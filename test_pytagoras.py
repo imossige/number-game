@@ -1,12 +1,13 @@
 import pytest
 
-from possible_solutions import solutions_diophantine_equation
+from possible_solutions import pythagorean_triplets_smart
 
 def test_pytagoras():
     
-    assert solutions_diophantine_equation(0) == []
-    
-    with pytest.raises{TypeError}:
-        solutions_diophantine_equation(1)
+    assert pythagorean_triplets_smart(0) == []
+
+def test_test_pytagoras_invalid_type(): 
+    with pytest.raises(TypeError):
+        pythagorean_triplets_smart("a")
     
  
