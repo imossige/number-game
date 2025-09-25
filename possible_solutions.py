@@ -1,4 +1,3 @@
-
 import time
 
 # def solutions_diophantine_equation(upper_limit: int) -> list[list[int]]:
@@ -17,7 +16,7 @@ import time
 #     squared_list = []
 
 #     num_list = list(range(1,upper_limit))
-#     num_squared = squared_list(num_list)  
+#     num_squared = squared_list(num_list)
 
 
 #     for x in num_list:
@@ -32,11 +31,13 @@ import time
 
 #     return results
 
+
 def square_list(int_list: list[int]) -> list[int]:
     return [x**2 for x in int_list]
 
+
 def add_list(list1: list[int], list2: list[int]) -> dict[tuple, int]:
-    #return [x1 + x2 for x1, x2 in zip(list1, list2)]
+    # return [x1 + x2 for x1, x2 in zip(list1, list2)]
     dictionary = {}
     for x1 in list1:
         for x2 in list2:
@@ -45,6 +46,10 @@ def add_list(list1: list[int], list2: list[int]) -> dict[tuple, int]:
 
 
 def pythagorean_triplets_smart(lim: int) -> list[list[int]]:
+    """
+    A very nice function
+    """
+
     results = []
     nums = list(range(1, lim + 1))
     squares = square_list(nums)
@@ -52,10 +57,11 @@ def pythagorean_triplets_smart(lim: int) -> list[list[int]]:
 
     for key, value in added_squares.items():
         if value in squares:
-            #print(value, key)
-            results.append([int(key[0]**0.5), int(key[1]**0.5), int(value**0.5)])
-    
+            # print(value, key)
+            results.append([int(key[0] ** 0.5), int(key[1] ** 0.5), int(value**0.5)])
+
     return results
+
 
 """
 
@@ -68,19 +74,21 @@ def pythagorean_triplets_smart(lim: int) -> list[list[int]]:
 5. Checks
 
 6. Prints
-"""   
+"""
+
 
 def main():
     start_time = time.time()
     # upper limit
     limit = 100
     # find solutions
-    #triplets = solutions_diophantine_equation(limit)
+    # triplets = solutions_diophantine_equation(limit)
     triplets = pythagorean_triplets_smart(limit)
     print(triplets)
     end_time = time.time()
 
     print(f"Execution took {end_time - start_time} seconds")
+
 
 if __name__ == "__main__":
     main()
